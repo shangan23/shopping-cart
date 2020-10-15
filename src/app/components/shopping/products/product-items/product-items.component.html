@@ -1,0 +1,10 @@
+<div class="card">
+  <img [src]="product.image" class="img-thumbnail" style="width: auto; height: 195px;" alt="Product Image">
+  <div class="card-body">
+    <div class="card-title">{{product.title}}</div>
+    <div class="card-subtitle mb-2 text-muted">₹{{product.price}}</div>
+  </div>
+  <div class="card-footer text-center">
+    <a class="btn btn-sm btn-primary" (click)="addToCart()">Add To Cart</a>
+  </div>
+</div>
