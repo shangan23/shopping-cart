@@ -1,5 +1,5 @@
 <app-spinner *ngIf="loading"></app-spinner>
-<div class="table-responsive-xl" *ngIf="!loading">
+<div class="table-responsive-xl" *ngIf="!loading && cartTotal>0">
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -21,4 +21,8 @@
     <div>
         <h3 class="float-right">Cart Total: {{cartTotal | number | currency:'INR' }}</h3>
     </div>
+</div>
+<div class="alert alert-danger" role="alert" *ngIf="cartTotal===0">
+    Your cart is empty! <br />
+    <a routerLink="/products">Browse Products</a> to proceed with cart.
 </div>
