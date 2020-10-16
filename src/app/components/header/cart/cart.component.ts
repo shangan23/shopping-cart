@@ -3,6 +3,7 @@ import { SignalingService } from 'src/app/services/signaling.service'
 import { Product } from 'src/app/models/product';
 import { Cart } from 'src/app/models/cart'
 import { CartService } from 'src/app/services/cart.service';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -14,7 +15,7 @@ export class CartComponent implements OnInit {
   cartTotal: number
   cartCount: number
 
-  constructor(private signal: SignalingService,private cart: CartService) { }
+  constructor(private signal: SignalingService, private cart_: CartService) { }
 
   ngOnInit(): void {
     this.getCart();
@@ -22,14 +23,21 @@ export class CartComponent implements OnInit {
   }
 
   getCart() {
+    this.cartItem = this.cart_.getItemFromCart()
     this.cartCount = this.cartItem.length;
-    this.cartTotal = (this.cartCount > 0) ? this.cartItem.map(function (a) { return a.price*a.quantity; }).reduce(function (a, b) { return a + b; }) : 0
+    this.cartTotal = (this.cartCount > 0) ? this.cartItem.map(function (a) {
+      console.log('a.price * a.quantity=', a.price * a.quantity)
+      return a.price * a.quantity;
+    }).reduce(function (a, b) {
+      console.log('a + b=', a + b)
+      return a + b;
+    }) : 0
   }
 
   addToCart() {
     this.signal.getCartItem()
       .subscribe((data) => {
-        this.cartItem.push(new Cart(data['id'], data['title'], data['price'], 2))
+        this.signal.updateGlobalCart(new Cart(data['id'], data['title'], data['price'], 1))
         this.getCart();
       })
   }

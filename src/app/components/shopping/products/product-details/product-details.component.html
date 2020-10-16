@@ -1,0 +1,12 @@
+<app-spinner *ngIf="loading"></app-spinner>
+<div class="row" *ngIf="!loading">
+    <div class="col">
+        <img class="img-thumbnail" style="width: auto; height: 450px;" [src]="product.image">
+    </div>
+    <div class="col">
+        <h3>{{product.title}}</h3>
+        <h4>{{product.price | currency:'INR'}}</h4>
+        <h5>{{product.description}}</h5>
+        <a class="btn btn-sm btn-primary" (click)="addToCart()">Add To Cart</a>&nbsp;
+    </div>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service'
+import { SignalingService } from 'src/app/services/signaling.service';
 
 @Component({
   selector: 'app-products',
@@ -10,8 +11,9 @@ import { ProductService } from 'src/app/services/product.service'
 export class ProductsComponent implements OnInit {
   productItems: Product[];
   loading:boolean;
-  constructor(private products: ProductService) { 
+  constructor(private products: ProductService,private signal:SignalingService) { 
     this.loading = true;
+    this.signal.sendProductTitle('');
   }
 
   ngOnInit(): void {

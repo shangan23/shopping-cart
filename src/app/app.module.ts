@@ -13,6 +13,8 @@ import { ProductsComponent } from './components/shopping/products/products.compo
 import { ProductItemsComponent } from './components/shopping/products/product-items/product-items.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { ProductDetailsComponent } from './components/shopping/products/product-details/product-details.component';
+import { ViewCartComponent } from './components/shopping/view-cart/view-cart.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     ProductsComponent,
     ProductItemsComponent,
     BreadcrumbComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    ProductDetailsComponent,
+    ViewCartComponent
   ],
   imports: [
     BrowserModule,

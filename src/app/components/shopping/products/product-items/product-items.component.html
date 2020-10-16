@@ -5,6 +5,7 @@
     <div class="card-subtitle mb-2 text-muted">₹{{product.price}}</div>
   </div>
   <div class="card-footer text-center">
-    <a class="btn btn-sm btn-primary" (click)="addToCart()">Add To Cart</a>
+    <a class="btn btn-sm btn-primary" (click)="addToCart()">Add To Cart</a>&nbsp;
+    <a class="btn btn-sm btn-secondary" [routerLink]="['/product',product.id]">View Details</a>
   </div>
 </div>

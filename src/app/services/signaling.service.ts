@@ -7,6 +7,8 @@ import { Subject } from 'rxjs'
 export class SignalingService {
 
   cartSubject = new Subject()
+  gloablCartSubject = new Subject()
+  breadcrumbTitle = new Subject()
 
   constructor() { }
 
@@ -15,7 +17,23 @@ export class SignalingService {
   }
 
   getCartItem() {
-   return this.cartSubject.asObservable()
+    return this.cartSubject.asObservable()
+  }
+
+  sendProductTitle(title) {
+    this.breadcrumbTitle.next(title)
+  }
+
+  getProductTitle() {
+    return this.breadcrumbTitle.asObservable()
+  }
+
+  updateGlobalCart(item) {
+    this.gloablCartSubject.next(item)
+  }
+
+  getGlobalCart() {
+    return this.gloablCartSubject.asObservable()
   }
 
 }

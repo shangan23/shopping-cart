@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SignalingService } from 'src/app/services/signaling.service';
 
 @Component({
   selector: 'app-breadcrumb',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./breadcrumb.component.css']
 })
 export class BreadcrumbComponent implements OnInit {
-
-  constructor() { }
+  breadcrumbTitle: string;
+  constructor(private signal: SignalingService) {
+    this.breadcrumbTitle = ''
+  }
 
   ngOnInit(): void {
+    this.signal.getProductTitle().subscribe(data => this.breadcrumbTitle = data.toString())
   }
 
 }

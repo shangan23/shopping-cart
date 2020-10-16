@@ -1,0 +1,24 @@
+<app-spinner *ngIf="loading"></app-spinner>
+<div class="table-responsive-xl" *ngIf="!loading">
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let items of cart">
+            <tr>
+                <td>{{items.title}}</td>
+                <td>{{items.quantity}}</td>
+                <td>{{items.price | currency:'INR'}} x {{items.quantity}}</td>
+                <td>{{items.price * items.quantity | currency:'INR' }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <h3 class="float-right">Cart Total: {{cartTotal | number | currency:'INR' }}</h3>
+    </div>
+</div>
