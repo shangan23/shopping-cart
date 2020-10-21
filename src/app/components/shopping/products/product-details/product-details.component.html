@@ -1,16 +1,21 @@
 <app-spinner *ngIf="loading"></app-spinner>
 <div class="row" *ngIf="!loading">
-    <div class="col">
-        <img class="img-thumbnail" style="width: auto; height: 450px;" [src]="product.image">
+  <div class="col">
+    <img
+      class="img-thumbnail"
+      style="width: auto; height: 450px;"
+      [src]="product.image"
+    />
+  </div>
+  <div class="col">
+    <h3>{{ product.title }}</h3>
+    <h6 class="display-6">{{ product.price | currency: appCurrency }}</h6>
+    <small class="text-muted">{{ product.description }}</small>
+    <div class="pdp-action">
+      <a class="btn btn-sm btn-primary" (click)="addToCart()">Add To Cart</a
+      >&nbsp;
+      <a class="btn btn-sm btn-secondary" routerLink="/cart">Go To Cart</a
+      >&nbsp;
     </div>
-    <div class="col">
-        <h3>{{product.title}}</h3>
-        <h6 class="display-6">{{product.price | currency:'INR'}}</h6>
-        <small class="text-muted">{{product.description}}</small>
-        <br/><br/><br/>
-        <div>
-            <a class="btn btn-sm btn-primary" (click)="addToCart()">Add To Cart</a>&nbsp;
-            <a class="btn btn-sm btn-secondary" routerLink="/cart">Go To Cart</a>&nbsp;
-        </div>
-    </div>
+  </div>
 </div>

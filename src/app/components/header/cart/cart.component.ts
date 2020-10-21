@@ -3,7 +3,7 @@ import { SignalingService } from 'src/app/services/signaling.service'
 import { Product } from 'src/app/models/product';
 import { Cart } from 'src/app/models/cart'
 import { CartService } from 'src/app/services/cart.service';
-import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -14,8 +14,9 @@ export class CartComponent implements OnInit {
   cartItem = []
   cartTotal: number
   cartCount: number
-
-  constructor(private signal: SignalingService, private cart_: CartService) { }
+  appCurrency
+  constructor(private signal: SignalingService, private cart_: CartService) { 
+  }
 
   ngOnInit(): void {
     this.getCart();

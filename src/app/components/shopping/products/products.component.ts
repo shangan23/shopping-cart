@@ -11,6 +11,7 @@ import { SignalingService } from 'src/app/services/signaling.service';
 export class ProductsComponent implements OnInit {
   productItems: Product[];
   loading:boolean;
+  appCurrency;
   constructor(private products: ProductService,private signal:SignalingService) { 
     this.loading = true;
     this.signal.sendProductTitle('');

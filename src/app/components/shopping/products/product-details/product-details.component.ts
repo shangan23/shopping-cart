@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router'
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/models/product';
 import { SignalingService } from 'src/app/services/signaling.service';
+import { appCurrency } from 'src/app/config'
 
 @Component({
   selector: 'app-product-details',
@@ -14,11 +15,13 @@ export class ProductDetailsComponent implements OnInit {
   id;
   product: Product;
   loading: boolean;
+  appCurrency
   constructor(
-    private route: ActivatedRoute, 
-    private product_: ProductService, 
-    private signal: SignalingService){
+    private route: ActivatedRoute,
+    private product_: ProductService,
+    private signal: SignalingService) {
     this.loading = true;
+    this.appCurrency = appCurrency
   }
 
   ngOnInit(): void {
@@ -33,7 +36,7 @@ export class ProductDetailsComponent implements OnInit {
     })
   }
 
-  addToCart(){
+  addToCart() {
     console.log(this.product)
     this.signal.sendCartItem(this.product)
   }

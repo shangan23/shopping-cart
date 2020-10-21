@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { Cart } from 'src/app/models/cart';
 import { SignalingService } from 'src/app/services/signaling.service';
+import { appCurrency } from 'src/app/config'
 
 @Component({
   selector: 'app-view-cart',
@@ -13,8 +14,10 @@ export class ViewCartComponent implements OnInit {
   loading: boolean
   cart: Cart[]
   cartTotal: number
+  appCurrency
   constructor(private cart_: CartService, private signal: SignalingService) {
     this.loading = true;
+    this.appCurrency = appCurrency
     this.signal.sendProductTitle('View Cart');
   }
 

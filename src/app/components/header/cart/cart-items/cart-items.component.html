@@ -1,3 +1,10 @@
-<button type="button" class="btn btn-primary btn-sm float-right text-center font-weight-light mx-auto" routerLink="/cart">
-    Cart ({{cartCount}}) <span *ngIf="cartTotal">- {{cartTotal | number | currency:'INR'}}</span>
+<button
+  type="button"
+  class="btn btn-primary btn-sm float-right text-center font-weight-light mx-auto"
+  routerLink="/cart"
+>
+  Cart ({{ cartCount }})
+  <span *ngIf="cartTotal"
+    >- {{ cartTotal | number | currency: appCurrency }}</span
+  >
 </button>

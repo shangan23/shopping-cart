@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { SignalingService } from 'src/app/services/signaling.service';
 import {CartService} from 'src/app/services/cart.service'
+import { appCurrency } from 'src/app/config'
 
 @Component({
   selector: 'app-product-items',
@@ -11,7 +12,10 @@ import {CartService} from 'src/app/services/cart.service'
 export class ProductItemsComponent implements OnInit {
 
   @Input() product:Product;
-  constructor(private signal:SignalingService, private cartService:CartService) { }
+  appCurrency;
+  constructor(private signal:SignalingService, private cartService:CartService) { 
+    this.appCurrency = appCurrency;
+  }
 
   ngOnInit(): void {
   }

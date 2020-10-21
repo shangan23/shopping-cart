@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { appCurrency } from 'src/app/config';
 
 @Component({
   selector: 'app-cart-items',
@@ -8,9 +9,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CartItemsComponent implements OnInit {
   @Input() cartCount;
   @Input() cartTotal;
-  constructor() { }
-
-  ngOnInit(): void {
+  appCurrency;
+  constructor() {
+    this.appCurrency = appCurrency;
   }
 
+  ngOnInit(): void {}
 }

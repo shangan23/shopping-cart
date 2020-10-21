@@ -9,11 +9,12 @@ import { SignalingService } from 'src/app/services/signaling.service';
 export class BreadcrumbComponent implements OnInit {
   breadcrumbTitle: string;
   constructor(private signal: SignalingService) {
-    this.breadcrumbTitle = ''
+    this.breadcrumbTitle = '';
   }
 
   ngOnInit(): void {
-    this.signal.getProductTitle().subscribe(data => this.breadcrumbTitle = data.toString())
+    this.signal
+      .getProductTitle()
+      .subscribe(data => (this.breadcrumbTitle = data.toString()));
   }
-
 }
