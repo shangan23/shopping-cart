@@ -1,29 +1,17 @@
 import { NgModule } from '@angular/core';
-import { ShopModule } from './modules/shop.module';
 import { SharedModule } from './modules/shared.module';
+import { CartModule } from './modules/cart.module';
+import { ListingModule } from './modules/listing.module';
+import { DetailModule } from './modules/detail.module';
+import { GuestModule } from './modules/guest.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
-import { HomeComponent } from './components/home/home.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { FooterComponent } from './components/footer/footer.component';
-
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    BreadcrumbComponent,
-    HomeComponent,
-    NotFoundComponent,
-    FooterComponent
-  ],
-  imports: [
-    ShopModule,
-    SharedModule,
-  ],
+  declarations: [AppComponent,HeaderComponent],
+  imports: [CartModule, ListingModule, DetailModule, GuestModule,SharedModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
