@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from '../app-routing.module';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 import { SpinnerComponent } from '../components/spinner/spinner.component';
 
 @NgModule({
@@ -13,13 +14,16 @@ import { SpinnerComponent } from '../components/spinner/spinner.component';
     CommonModule,
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   exports:[
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    SpinnerComponent
+    SpinnerComponent,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

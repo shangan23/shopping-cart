@@ -1,20 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule} from '@angular/common/http'
+import { SharedModule } from './app/modules/shared.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { CartComponent } from './components/header/cart/cart.component';
-import { CartItemsComponent } from './components/header/cart/cart-items/cart-items.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { ShoppingComponent } from './components/shopping/shopping.component';
-import { ProductsComponent } from './components/shopping/products/products.component';
-import { ProductItemsComponent } from './components/shopping/products/product-items/product-items.component';
-import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
-import { SpinnerComponent } from './components/spinner/spinner.component';
-import { ProductDetailsComponent } from './components/shopping/products/product-details/product-details.component';
-import { ViewCartComponent } from './components/shopping/view-cart/view-cart.component';
+import { HeaderComponent } from './app/components/header/header.component';
+import { CartComponent } from './app/components/header/cart/cart.component';
+import { CartItemsComponent } from './app/components/header/cart/cart-items/cart-items.component';
+import { FooterComponent } from './app/components/footer/footer.component';
+import { ShoppingComponent } from './app/components/shopping/shopping.component';
+import { ProductsComponent } from './app/components/shopping/products/products.component';
+import { ProductItemsComponent } from './app/components/shopping/products/product-items/product-items.component';
+import { BreadcrumbComponent } from './app/components/breadcrumb/breadcrumb.component';
+import { SpinnerComponent } from './app/components/spinner/spinner.component';
+import { ProductDetailsComponent } from './app/components/shopping/products/product-details/product-details.component';
+import { ViewCartComponent } from './app/components/shopping/view-cart/view-cart.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +31,8 @@ import { ViewCartComponent } from './components/shopping/view-cart/view-cart.com
     ProductDetailsComponent,
     ViewCartComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+  imports: [SharedModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

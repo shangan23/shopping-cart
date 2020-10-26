@@ -5,11 +5,26 @@ import { ProductsComponent } from './components/shopping/products/products.compo
 import { ViewCartComponent } from './components/shopping/view-cart/view-cart.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path:'',
+    redirectTo:'home',
+    pathMatch:'full'
+  },
+  {
+    path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
   {
     path: 'product/:id',

@@ -1,0 +1,138 @@
+<div class="container">
+  <h4 class="display-4">Registration</h4>
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div class="form-row">
+      <div class="col-4">
+        <div class="form-group">
+          <label for="username">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            formControlName="name"
+            [ngClass]="{
+              'is-invalid':
+                registerForm.get('name').touched &&
+                registerForm.get('name').invalid
+            }"
+            id="name"
+            required
+          />
+          <span class="invalid-feedback">Name can't be blank</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-4">
+        <div class="form-group">
+          <label for="username">Email</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="email"
+            name="email"
+            [ngClass]="{
+              'is-invalid':
+                registerForm.get('email').touched &&
+                registerForm.get('email').invalid
+            }"
+            id="email"
+            required
+          />
+          <span class="invalid-feedback">
+            <span *ngIf="registerForm.get('email').hasError('required')"
+              >Email can't be blank.</span
+            >
+            <span *ngIf="registerForm.get('email').hasError('email')"
+              >Email must be valid.</span
+            >
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-4">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            id="username"
+            formControlName="username"
+            [ngClass]="{
+              'is-invalid':
+                registerForm.get('username').touched &&
+                registerForm.get('username').invalid
+            }"
+            required
+          />
+          <span class="invalid-feedback">Username can't be blank</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-4">
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            [ngClass]="{
+              'is-invalid':
+                registerForm.get('password').touched &&
+                registerForm.get('password').invalid
+            }"
+            formControlName="password"
+            id="password"
+            required
+          />
+          <span class="invalid-feedback">
+            <span *ngIf="registerForm.get('password').hasError('required')"
+              >Password can't be blank</span
+            >
+            <span *ngIf="registerForm.get('password').hasError('symbol')"
+              >Password must contain @</span
+            >
+            <span *ngIf="registerForm.get('password').hasError('minlength')"
+              >Password length must be 6 or greater
+            </span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-4">
+        <div class="form-group">
+          <label for="password">Confirm Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="confirmPassword"
+            id="confirmPassword"
+            formControlName="confirmPassword"
+            [ngClass]="{
+              'is-invalid':
+                registerForm.get('confirmPassword').touched &&
+                registerForm.get('confirmPassword').invalid
+            }"
+            required
+          />
+          <span class="invalid-feedback">
+            Password & Confirm Passowrd should match
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="registerForm.invalid"
+      >
+        Register
+      </button>
+    </div>
+  </form>
+</div>

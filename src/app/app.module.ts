@@ -8,6 +8,8 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { FooterComponent } from './components/footer/footer.component';
     BreadcrumbComponent,
     HomeComponent,
     NotFoundComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     ShopModule,

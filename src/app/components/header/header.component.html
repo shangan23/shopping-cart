@@ -1,12 +1,39 @@
-<div class="container">
-    <div class="row sticky-top">
-        <div class="col-4">
-            <h2>Shopping Cart</h2>
-        </div>
-        <div class="col-6">
-        </div>
-        <div class="col gutter">
-            <app-cart></app-cart>
-        </div>
-    </div>
-</div>
+<nav class="navbar navbar-fixed-top navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Shoppgin Cart</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div
+    class="collapse navbar-collapse justify-content-end"
+    id="navbarNavDropdown"
+  >
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="products"
+          >Products</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="login"
+          >Login</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="register"
+          >Register</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
