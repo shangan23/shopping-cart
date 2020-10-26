@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
-import { ShopModule } from './modules/shop.module';
 import { SharedModule } from './modules/shared.module';
+import { CartModule } from './modules/cart.module';
+import { ListingModule } from './modules/listing.module';
+import { DetailModule } from './modules/detail.module';
+import { GuestModule } from './modules/guest.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -10,6 +13,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ShopModule } from './modules/shop.module';
 
 
 @NgModule({
@@ -28,6 +32,6 @@ import { RegisterComponent } from './components/register/register.component';
     SharedModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
